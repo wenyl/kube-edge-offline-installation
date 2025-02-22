@@ -1,0 +1,14 @@
+apiVersion: rules.kubeedge.io/v1
+kind: Rule
+
+metadata:
+  name: edge2cloud-1
+  labels:
+    description: edge-eventbus-cloud-rest
+spec:
+  source: "my-eventbus"
+  sourceResource:
+    topic: "edgeData"
+    node_name: "edge1"
+  target: "my-rest"
+  targetResource: {"resource":"http://192.168.10.102:8001/api/v1/communications/collect-consumption-back"}

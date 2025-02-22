@@ -1,0 +1,12 @@
+apiVersion: rules.kubeedge.io/v1 
+kind: Rule 
+
+metadata: 
+  name: cloud2edge 
+  labels: 
+    description: cloud-rest-edge-eventbus 
+spec: 
+  source: "my-rest" 
+  sourceResource: {"path":"/mqtt"} 
+  target: "my-eventbus"
+  targetResource: {"topic":"cloudData"}
